@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="/resources/public/css/styles.css">
+    <link rel="stylesheet" href="/resources/public/css/login.css">
+    <link rel="stylesheet" href="/resources/public/css/footer.css">
+    <link rel="stylesheet" href="/resources/public/css/all.min.css">
     <title>Login</title>
 </head>
 <body>
     <div class="main">
         <div class="logo">
-            <img id="logo" alt="logo_laliga" src="img/LaLiga_123.png">
+            <img id="logo" alt="logo_laliga" src="/resources/public/img/LaLiga_123.png">
             <div class="ruta">
                 <p>Inicio / Login</p>
             </div>
@@ -31,7 +31,7 @@
             <br>
         </div>
 
-        <#include "/templates/footer.ftl">
+        <#include "footer.ftl">
 
     </div>
 </body>

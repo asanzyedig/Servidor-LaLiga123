@@ -3,10 +3,10 @@ package edu.masanz.laliga123.dao;
 import edu.masanz.laliga123.database.ConnectionManager;
 import edu.masanz.laliga123.model.User;
 
-public class usersDao {
+public class UsersDao {
 
     public static User login(String username, String password){
-        String select = "SELECT * FROM USERS where username ? and password ?";
+        String select = "SELECT * FROM USERS where username = ? and password = ?";
         Object[] params = {username,password};
         Object[][] result = ConnectionManager.ejecutarSelectSQL(select,params);
         if (result.length == 1) {

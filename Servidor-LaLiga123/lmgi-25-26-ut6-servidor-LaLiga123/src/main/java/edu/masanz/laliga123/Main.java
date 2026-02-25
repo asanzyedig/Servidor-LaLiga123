@@ -1,18 +1,12 @@
 package edu.masanz.laliga123;
 
-import edu.masanz.laliga123.controller.LaLiga123Controller;
-import edu.masanz.laliga123.controller.usersController;
+import edu.masanz.laliga123.controller.UsersController;
 import edu.masanz.laliga123.database.ConnectionManager;
 import io.javalin.Javalin;
-import io.javalin.http.Context;
 import io.javalin.rendering.template.JavalinFreemarker;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
 
@@ -22,14 +16,14 @@ public class Main {
 
         logger.info("ARRANCANDO APLICACION");
 
-        ConnectionManager.conectar("LaLiga123","admin","admin");
+        ConnectionManager.conectar("LaLiga123","root","roo7");
 
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("public");
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
-        app.get("/", usersController::login);
+        app.get("/login/{username}/{password}", UsersController::login);
     }
 
 }
