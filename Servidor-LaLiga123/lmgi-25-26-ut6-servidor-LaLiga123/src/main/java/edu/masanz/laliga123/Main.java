@@ -37,6 +37,6 @@ public class Main {
     private static void ejemplo(@NotNull Context context) {
 
         Map<String , Object> model = new HashMap<>();
-        context.render("/templates/index.ftl", model);
+        context.render("/templates/inicio.ftl", model);
     }
 }
