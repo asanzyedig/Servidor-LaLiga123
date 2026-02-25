@@ -28,17 +28,9 @@ public class Main {
         app.get("/", LaLiga123Controller::login);
     }
 
-<<<<<<< HEAD
     private static void login(@NotNull Context context) {
 
         context.render("/templates/login.ftl");
     }
 
-    private static void ejemplo(@NotNull Context context) {
-
-        Map<String , Object> model = new HashMap<>();
-        context.render("/templates/inicio.ftl", model);
-    }
-=======
->>>>>>> 15f3e8a5c5358156cecf31b5289fc9c101b65280
 }
