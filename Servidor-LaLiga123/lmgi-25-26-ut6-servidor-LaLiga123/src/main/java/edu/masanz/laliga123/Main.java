@@ -1,5 +1,6 @@
 package edu.masanz.laliga123;
 
+import edu.masanz.laliga123.controller.LaLiga123Controller;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.rendering.template.JavalinFreemarker;
@@ -24,11 +25,10 @@ public class Main {
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
-        app.get("/", Main::ejemplo);
-        app.get("/login",Main::login);
-
+        app.get("/", LaLiga123Controller::login);
     }
 
+<<<<<<< HEAD
     private static void login(@NotNull Context context) {
 
         context.render("/templates/login.ftl");
@@ -39,4 +39,6 @@ public class Main {
         Map<String , Object> model = new HashMap<>();
         context.render("/templates/inicio.ftl", model);
     }
+=======
+>>>>>>> 15f3e8a5c5358156cecf31b5289fc9c101b65280
 }
