@@ -1,6 +1,8 @@
 package edu.masanz.laliga123;
 
 import edu.masanz.laliga123.controller.LaLiga123Controller;
+import edu.masanz.laliga123.controller.usersController;
+import edu.masanz.laliga123.database.ConnectionManager;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.rendering.template.JavalinFreemarker;
@@ -20,17 +22,14 @@ public class Main {
 
         logger.info("ARRANCANDO APLICACION");
 
+        ConnectionManager.conectar("LaLiga123","admin","admin");
+
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("public");
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
-        app.get("/", LaLiga123Controller::login);
-    }
-
-    private static void login(@NotNull Context context) {
-
-        context.render("/templates/login.ftl");
+        app.get("/", usersController::login);
     }
 
 }
