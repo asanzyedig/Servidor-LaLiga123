@@ -19,14 +19,14 @@
         </div>
 
         <div id="login">
-            <form action="inicio.ftl" >
+            <form action="/inicio" >
             
                 <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
                 <input type="password" id="pass" name="pass" placeholder="Contraseña" required>
                 <br>
                 <br>
                 <input type="submit" name="enviar" id="enviar" value="Iniciar sesion"><br>
-                <a href="inicio.ftl">Continuar como invitado</a>
+                <a href="/inicio">Continuar como invitado</a>
             </form>
             <br>
         </div>

@@ -19,4 +19,9 @@ public class UsersController {
 
         context.render("/templates/inicio.ftl");
     }
+
+    public static void hacerLogin(@NotNull Context context) {
+        context.redirect("/inicio");
+
+    }
 }
