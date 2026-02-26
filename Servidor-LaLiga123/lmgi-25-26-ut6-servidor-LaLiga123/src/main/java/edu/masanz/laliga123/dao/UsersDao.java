@@ -6,7 +6,7 @@ import edu.masanz.laliga123.model.User;
 public class UsersDao {
 
     public static User login(String username, String password){
-        String select = "SELECT * FROM USERS where username = ? and password = ?";
+        String select = "SELECT * FROM USERS WHERE username = ? AND password = ?";
         Object[] params = {username,password};
         Object[][] result = ConnectionManager.ejecutarSelectSQL(select,params);
         if (result.length == 1) {

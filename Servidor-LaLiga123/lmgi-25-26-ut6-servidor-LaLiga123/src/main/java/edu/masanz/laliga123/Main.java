@@ -24,6 +24,7 @@ public class Main {
         }).start(8080);
 
         app.get("/login/{username}/{password}", UsersController::login);
+        app.get("/inicio", UsersController::inicio);
     }
 
 }
