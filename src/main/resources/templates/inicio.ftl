@@ -20,6 +20,7 @@
 
         <div id="botones">
             <button onclick="location.href='torneos/gestionTorneos.html'">Torneos</button>
+            <button onclick="location.href='/users'">Usuarios</button>
             <button onclick="location.href='equipos/gestionEquipos.html'">Equipos</button>
             <button onclick="location.href='partidos/gestionPartidos.html'">Partidos</button>
             <button onclick="location.href='estadisticas/estadisticas.html'">Estadísticas</button>

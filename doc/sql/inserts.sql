@@ -1,2 +1,2 @@
-insert into users values ("admin", "admin",1);
-insert into users values ("user", "1234",2);
+insert into users (username, password, rol) values ("admin", "admin",1);
+insert into users (username, password, rol) values ("user", "1234",2);

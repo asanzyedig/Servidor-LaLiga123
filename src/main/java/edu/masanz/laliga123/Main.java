@@ -27,6 +27,13 @@ public class Main {
         app.post("/login/{username}/{password}", UsersController::hacerLogin);
 
         app.get("/inicio", UsersController::inicio);
+
+        //Usuarios
+        app.get("/users", UsersController::users);
+        app.get("/lista-users", UsersController::listarUsers);
+        app.get("/edita-user", UsersController::editaUser);
+        app.get("/add-user", UsersController::addUser);
+        app.get("/elimina-user", UsersController::delUser);
     }
 
 }
