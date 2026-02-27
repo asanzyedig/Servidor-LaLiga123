@@ -1,0 +1,30 @@
+<changelist name="Uncommitted_changes_before_Update_at_27_02_2026_9_53_[Changes]" date="1772182435953" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_9_53_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 27/02/2026 9:53 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/edu/masanz/laliga123/Main.class" />
+    <option name="AFTER_PATH" value="target/classes/edu/masanz/laliga123/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_9_53_[Changes]/Main.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/edu/masanz/laliga123/controller/UsersController.class" />
+    <option name="AFTER_PATH" value="target/classes/edu/masanz/laliga123/controller/UsersController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_9_53_[Changes]/UsersController.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="target/classes/public/webfonts/fa-regular-400.woff2" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_9_53_[Changes]/fa-regular-400.woff2" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="target/classes/public/webfonts/fa-v4compatibility.woff2" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_9_53_[Changes]/fa-v4compatibility.woff2" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="target/classes/public/webfonts/fa-solid-900.woff2" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_9_53_[Changes]/fa-solid-900.woff2" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="target/classes/public/webfonts/fa-brands-400.woff2" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_9_53_[Changes]/fa-brands-400.woff2" />
+  </binary>
+</changelist>
