@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laliga123 - Gestion de partidos</title>
+    <link rel="stylesheet" href="/estilos/styles.css">
+    <link rel="stylesheet" href="/estilos/footer.css">
+    <link rel="stylesheet" href="/estilos/all.min.css">
+    <link rel="stylesheet" href="/estilos/gestionPartidos.css">
+</head>
+<body>
+   <div class="main">
+        <div class="logo">
+            <a href="/htmls/inicio.html"><img id="logo" alt="logo_laliga" src="/img/LaLiga_123.png"></a>
+            <div class="ruta">
+                <p>Partidos</p>
+            </div>
+        </div>
+        
+        
+        
+        <div id="botones">
+            <form action="" method="post">
+            <select name="torneo" id="torneo" required>
+                <option value="">Elige un torneo</option>
+                <option value="torneo1">Torneo1</option>
+                <option value="torneo2">Torneo2</option>
+                <option value="torneo3">Torneo3</option>
+            </select>
+            <br>
+            <select name="jornada" id="jornada" required>
+                <option value="">Elige una jornada</option>
+                <option value="jornada1">Jornada1</option>
+                <option value="jornada2">Jornada2</option>
+                <option value="jornada3">Jornada3</option>
+            </select>
+            <br>
+            <select name="partido" id="partido" required>
+                <option value="">Elige un partido</option>
+                <option value="partido1">Partido1</option>
+                <option value="partido2">Partido2</option>
+                <option value="partido3">Partido3</option>
+            </select>
+            <br>
+            <button onclick="location.href='modPuntuaciones.html'">Modificar</button>
+            
+        </form>
+            
+            <button onclick="location.href='/htmls/inicio.html'">Atrás</button>
+        </div>
+
+        <footer>
+            <p>© 2026 LaLiga123. Todos los derechos reservados.</p>
+            <div class="links">
+                <ul>
+                    <li><a class="textos" href="https://portal.mineco.gob.es/es-es/ministerio/Paginas/Politica_de_privacidad.aspx">Política de Privacidad</a></li>
+                    <li><a class="textos" href="https://policies.google.com/terms?hl=es">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            
+            <div class="social-media">
+                <a href="https://www.facebook.com">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://x.com">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </footer> 
+    </div>
+    
+</body>
+</html>
