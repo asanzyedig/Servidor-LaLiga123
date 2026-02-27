@@ -1,0 +1,35 @@
+select {
+    font-size: 2.25vh;
+    margin-bottom: 3.5vh;
+    width: 30vh;
+    border: none;
+    padding: 2.1vh;
+    border-radius: 20px;
+    text-align: center;
+}
+.partidos {
+    border: 0.2vh solid black;
+    border-radius: 2vh;
+    display: flex;
+    width: 65%;
+    margin-bottom: 2vh;
+    align-items: center;
+    
+}
+.equipos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+.caja{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+i {
+    font-size: 5vh;
+}
