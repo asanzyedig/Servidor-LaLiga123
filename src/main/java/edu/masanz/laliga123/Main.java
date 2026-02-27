@@ -29,7 +29,6 @@ public class Main {
         app.get("/inicio", UsersController::inicio);
 
         //Usuarios
-        app.get("/users", UsersController::users);
         app.get("/lista-users", UsersController::listarUsers);
         app.get("/edita-user", UsersController::editaUser);
         app.get("/add-user", UsersController::addUser);
