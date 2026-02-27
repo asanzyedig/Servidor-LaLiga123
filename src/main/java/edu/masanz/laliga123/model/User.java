@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
+    private int id;
     private String username;
     private String password;
     private int rol;
@@ -15,6 +16,15 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
         this.rol = rol;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
