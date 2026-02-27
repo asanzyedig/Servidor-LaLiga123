@@ -22,37 +22,20 @@
         </div>
             <div id="botones">
                 <form action="" method="get">
-                    <div class="fila-img"> <img src="/img/barcelona-fc.jpg" alt="">
+                    <div class="fila-img"> <img src="${team.image}" alt="">
                         <label for="selImg" class="btn-file">Seleccionar imagen</label>
                         <input type="file" name="selImg" id="selImg">
                     </div>
                     <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" value="${team.name}">
                     <label for="sede">Sede principal:</label>
-                    <input type="text" name="sede" id="sede">
+                    <input type="text" name="sede" id="sede" value="${team.sede}">
                 </form>
-                    <button onclick="location.href='gestionEquipos.html'">Crear Equipo</button>
-                    <button onclick="location.href='gestionEquipos.html'">Atrás</button>
+                    <button onclick="location.href='/equipos'">Crear Equipo</button>
+                    <button onclick="location.href='/equipos'">Atrás</button>
             </div>
 
-            <footer>
-                <p>© 2026 LaLiga123. Todos los derechos reservados.</p>
-                <div class="links">
-                    <ul>
-                        <li><a class="textos" href="https://portal.mineco.gob.es/es-es/ministerio/Paginas/Politica_de_privacidad.aspx">Política de Privacidad</a></li>
-                        <li><a class="textos" href="https://policies.google.com/terms?hl=es">Términos y Condiciones</a></li>
-                    </ul>
-                </div>
-
-                <div class="social-media">
-                    <a href="https://www.facebook.com">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="https://x.com">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-                </div>
-            </footer>
+            <#include "footer.ftl">
         </div>
     </body>
 </html>
