@@ -14,11 +14,16 @@ import java.util.Map;
 public class UsersController {
 
     public static void login(Context context) {
+        context.render("/templates/login.ftl");
+    }
+
+    public static void hacerLogin(@NotNull Context context) {
         String username = context.pathParam("username");
         String password = context.pathParam("password");
         UsersService.login(username,password);
 
-        context.render("/templates/login.ftl");
+        context.redirect("/inicio");
+
     }
 
     public static void inicio(@NotNull Context context) {
@@ -26,10 +31,6 @@ public class UsersController {
         context.render("/templates/inicio.ftl");
     }
 
-    public static void hacerLogin(@NotNull Context context) {
-        context.redirect("/inicio");
-
-    }
 
     public static void listarUsers(@NotNull Context context) {
         Map<String, Object> model = new HashMap<>();
