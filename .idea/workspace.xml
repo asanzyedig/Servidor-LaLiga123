@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec5ac013-fb7d-4146-86ae-dbc6e91136d6" name="Changes" comment="" />
+    <list default="true" id="cf5e244f-3b4a-40dc-8586-c76959fc1adf" name="Changes" comment="ftl perfil equipo casi terminado">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +15,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rsanchelop2&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/asanzyedig/Servidor-LaLiga123.git&quot;,
+    &quot;accountId&quot;: &quot;d5d3881e-b2fd-4142-ac1f-878e141eec85&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -27,8 +41,9 @@
     "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/asanzyedig/Servidor-LaLiga123",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -50,7 +65,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ec5ac013-fb7d-4146-86ae-dbc6e91136d6" name="Changes" comment="" />
+      <changelist id="cf5e244f-3b4a-40dc-8586-c76959fc1adf" name="Changes" comment="ftl perfil equipo casi terminado" />
       <created>1772176639590</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
