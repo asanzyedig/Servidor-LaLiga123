@@ -13,6 +13,11 @@ import java.util.Map;
 
 public class UsersController {
 
+    public static void principal(@NotNull Context context) {
+
+        context.redirect("/login");
+    }
+
     public static void login(Context context) {
         context.render("/templates/login.ftl");
     }
@@ -49,4 +54,5 @@ public class UsersController {
 
     public static void delUser(@NotNull Context context) {
     }
+
 }

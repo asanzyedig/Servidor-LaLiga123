@@ -23,6 +23,8 @@ public class Main {
             config.fileRenderer(new JavalinFreemarker());
         }).start(8080);
 
+        app.get("/", UsersController::principal);
+
         app.get("/login", UsersController::login);
         app.post("/login", UsersController::hacerLogin);
 

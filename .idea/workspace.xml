@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf5e244f-3b4a-40dc-8586-c76959fc1adf" name="Changes" comment="ftl perfil equipo casi terminado">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console.log" beforeDir="false" afterPath="$PROJECT_DIR$/console.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/masanz/laliga123/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/masanz/laliga123/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/masanz/laliga123/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/masanz/laliga123/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/form-user.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/controller/UsersController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +50,9 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/asanzyedig/Servidor-LaLiga123",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="TaskManager">
