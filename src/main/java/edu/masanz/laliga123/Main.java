@@ -1,5 +1,6 @@
 package edu.masanz.laliga123;
 
+import edu.masanz.laliga123.controller.EquiposController;
 import edu.masanz.laliga123.controller.UsersController;
 import edu.masanz.laliga123.database.ConnectionManager;
 import io.javalin.Javalin;
@@ -30,11 +31,15 @@ public class Main {
 
         app.get("/inicio", UsersController::inicio);
 
-        //Usuarios
+        // Usuarios
         app.get("/lista-users", UsersController::listarUsers);
         app.get("/edita-user", UsersController::editaUser);
         app.get("/add-user", UsersController::addUser);
         app.get("/elimina-user", UsersController::delUser);
+
+
+        // Equipos
+        app.get("/perfil-equipo/{id}", EquiposController::mostrarPerfil);
     }
 
 }

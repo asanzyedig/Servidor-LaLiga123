@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Usuarios</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/fontawesome-free-7.1.0-web/css/all.min.css">
 </head>
 <body>
 <h1>Usuarios</h1>
