@@ -46,4 +46,46 @@ public class UsersDao {
         }
         return users;
     }
+
+    public static User guardarUser(User user) {
+        String sql = "INSERT INTO users (username, password, rol) VALUES (?, ?, ?)";
+        Object[] params = {user.getUsername(), user.getPassword(), user.getRol()};
+        int id = (int) ConnectionManager.ejecutarInsertSQL(sql, params);
+        if (id > 0){
+            user.setId(id);
+        }
+        return user;
+    }
+
+    public static User obtenerUser(int idUser) {
+        String sql = "SELECT id, username, password, rol FROM users WHERE id = ? ORDER BY id DESC LIMIT 1";
+        Object[] params = {idUser};
+        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
+        if (resultado != null && resultado.length == 1) {
+            User user = new User();
+
+            user.setId( (int) resultado[0][0]);
+            user.setUsername((String) resultado[0][1]);
+            user.setPassword((String) resultado[0][2]);
+            user.setRol( (int) resultado[0][3]);
+
+            return user;
+        }
+        return null;
+
+    }
+
+    public static boolean actualizarUser(User user) {
+        String sql = "UPDATE user SET username = ?, password = ?, rol = ? WHERE id = ?";
+        Object[] params = {user.getId(), user.getUsername(), user.getPassword(), user.getRol()};
+        ConnectionManager.ejecutarUpdateSQL(sql, params);
+        return true;
+    }
+
+    public static boolean eliminarUser(int idUser) {
+        String sql = "DELETE FROM users WHERE id = ?";
+        Object[] params = {idUser};
+        ConnectionManager.ejecutarUpdateSQL(sql,params);
+        return true;
+    }
 }
