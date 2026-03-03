@@ -9,5 +9,5 @@ create table teams (
     id int auto_increment primary key,
     name varchar(100) not null,
     sede varchar(150) not null,
-    image longtext not null
+    image longtext
 );

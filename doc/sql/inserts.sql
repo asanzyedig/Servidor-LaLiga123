@@ -1,8 +1,3 @@
-
-insert into users (username, password, rol) values ("admin", "admin",1);
-insert into users (username, password, rol) values ("user", "1234",2);
-
-
 -- INSERTS TABLA USUARIOS
 insert into users (username, password, rol) values ("admin", "admin",1);
 insert into users (username, password, rol) values ("user", "1234",2);
