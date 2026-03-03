@@ -32,9 +32,13 @@ public class Main {
 
         //Usuarios
         app.get("/lista-users", UsersController::listarUsers);
-        app.get("/edita-user", UsersController::editaUser);
+        app.get("/user/{id}", UsersController::servirUser);
+        app.get("/edita-user/{id}", UsersController::editaUser);
+        app.post("/edita-user/{id}", UsersController::editarUser);
         app.get("/add-user", UsersController::addUser);
-        app.get("/elimina-user", UsersController::delUser);
+        app.post("/add-user", UsersController::crearUser);
+        app.get("/elimina-user/{id}", UsersController::delUser);
+        app.post("/elimina-user/{id}", UsersController::eliminarUser);
     }
 
 }
