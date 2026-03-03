@@ -1,5 +1,6 @@
 package edu.masanz.laliga123;
 
+import edu.masanz.laliga123.controller.EquiposController;
 import edu.masanz.laliga123.controller.UsersController;
 import edu.masanz.laliga123.database.ConnectionManager;
 import io.javalin.Javalin;
@@ -16,12 +17,12 @@ public class Main {
 
         logger.info("ARRANCANDO APLICACION");
 
-        ConnectionManager.conectar("LaLiga123","root","roo7");
+        ConnectionManager.conectar("LaLiga123","root","root");
 
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("public");
             config.fileRenderer(new JavalinFreemarker());
-        }).start(8080);
+        }).start(7070);
 
         app.get("/", UsersController::principal);
 
@@ -39,6 +40,12 @@ public class Main {
         app.post("/add-user", UsersController::crearUser);
         app.get("/elimina-user/{id}", UsersController::delUser);
         app.post("/elimina-user/{id}", UsersController::eliminarUser);
+
+        // Equipos
+        app.get("/gestion-equipos", EquiposController::gestionEquipos);
+        app.get("/lista-equipos", EquiposController::listarEquipos);
+        app.get("/perfil-equipo/{id}", EquiposController::mostrarPerfil);
+        //app.post("/crear-equipo", EquiposController::crearEquipo);
     }
 
 }

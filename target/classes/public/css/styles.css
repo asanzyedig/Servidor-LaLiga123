@@ -1,0 +1,165 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  margin: 0;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100vw;
+    border-radius: 20px;
+    margin: 0px;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+.ruta {
+    margin-top: 3vh;
+    position: relative;
+    font-size: 6.5vw;
+    font-weight: bolder;
+    width: 100vw;
+    border-top: 1px solid rgb(97, 97, 97);
+    border-bottom: 1px solid rgb(97, 97, 97);
+    color: black;
+    z-index: 0;
+}
+
+.ruta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/gol_messi.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -10vw;
+    opacity: 0.55;
+    z-index: -1;
+}
+
+
+
+.logo {
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+}
+
+#logo {
+    width: 55%;
+    margin-top: 2.35vw;
+}
+
+#botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-size: 2.25vh;
+    margin-bottom: 3.5vh;
+    width: 30vh;
+    border: none;
+    padding: 2.1vh;
+    border-radius: 20px;
+    transition: all 0.2s ease-in;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
+    font-size: 2.85vh;
+    padding: 2.5vh;
+}
+
+button:active {
+    color: black;
+    background-color: white;
+}
+
+.participante {
+    display: flex;
+}
+
+.participante i {
+    margin-left: 1vw;
+    margin-top: 1.7vh;
+}
+
+.participante p {
+    margin-right: 15vw;
+    margin-left: 3vw;
+}
+
+.participante a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#participantes, #mod_participantes {
+    margin-bottom: 4vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.select_participante {
+    border-radius: 10px;
+    padding: 3vw;
+    width: 52vw;
+}
+
+#mod_participantes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+}
+
+#introducir_nombre {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.label {
+    margin-bottom: 2vh;
+}
+
+#icono_imagen_usuario {
+    height: 10vh;
+    margin-left: -8vw;
+}
+
+.arrastrar_imagen {
+    display: flex;
+}
+
+#seleccionar_archivo {
+    display: none;
+}
+
+#label_imagen {
+    height: 10vh;
+    width: 32vw;
+    border: 2px dashed #999;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    cursor: pointer;
+    background-color: #fafafa;
+    margin-left: -3vw;
+}

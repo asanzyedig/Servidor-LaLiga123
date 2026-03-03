@@ -1,0 +1,30 @@
+.main{
+    height: 100vh
+}
+
+div#login{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+
+div#login form {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    margin: 1vh;
+    border-radius: 5px;
+    width: 80%;
+    padding: 2.5vh;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 2.25vh;
+    text-align: center;
+}
