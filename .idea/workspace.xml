@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf5e244f-3b4a-40dc-8586-c76959fc1adf" name="Changes" comment="ftl perfil equipo casi terminado">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/form-user.ftl" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -16,11 +17,55 @@
       <change beforePath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/controller/UsersController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/dao/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/dao/UsersDao.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console.log" beforeDir="false" afterPath="$PROJECT_DIR$/console.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/controller/UsersController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/dao/UsersDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/masanz/laliga123/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/clasificacion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/crearTorneo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/gestionPartidos.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/inicio.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/modPuntuaciones.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/perfilEquipo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/perfilJugador.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/css/verPartidos.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/img/LaLiga_123.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/img/barcelona-fc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/img/barsa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/img/gol_messi.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/public/img/user-icon-on-transparent-background-free-png.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/equipos/gestionEquipos.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/equipos/listaEquipos.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/equipos/perfilEquipo.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/footer.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/form-user.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/inicio.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/lista-users.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.ftl" beforeDir="false" />
+>>>>>>> 872d7a33386539b7470fdd7bf95ee22374f9d222
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +91,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
@@ -60,6 +106,35 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/asanzyedig/Servidor-LaLiga123",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Servidor-LaLiga123" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Servidor-LaLiga123" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+>>>>>>> 872d7a33386539b7470fdd7bf95ee22374f9d222
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="cf5e244f-3b4a-40dc-8586-c76959fc1adf" name="Changes" comment="ftl perfil equipo casi terminado" />
