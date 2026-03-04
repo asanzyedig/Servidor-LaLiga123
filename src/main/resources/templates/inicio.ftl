@@ -19,12 +19,14 @@
         </div>
 
         <div id="botones">
+        <#-- comentado hasta que se apliquen los torneos
             <button onclick="location.href='torneos/gestionTorneos.html'">Torneos</button>
+        -->
             <button onclick="location.href='/lista-users'">Usuarios</button>
             <button onclick="location.href='/gestion-equipos'">Equipos</button>
             <button onclick="location.href='partidos/gestionPartidos.html'">Partidos</button>
             <button onclick="location.href='estadisticas/estadisticas.html'">Estadísticas</button>
-            <button class="cerrar-sesion" onclick="location.href='/login.html'">Cerrar sesión</button>
+            <button class="cerrar-sesion" onclick="location.href='/login'">Cerrar sesión</button>
         </div>
 
         <#include "footer.ftl">

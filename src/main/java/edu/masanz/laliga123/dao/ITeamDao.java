@@ -44,4 +44,15 @@ public class ITeamDao {
         }
         return teams;
     }
+
+    public static Team guardarEquipo(Team team) {
+        String sql = "INSERT INTO teams (name, sede, image) VALUES (?, ?, ?)";
+        Object[] params = {team.getName(), team.getSede(), team.getImage()};
+        long id = ConnectionManager.ejecutarInsertSQL(sql, params);
+        System.out.println(id);
+        if (id > 0){
+            //team.setName();
+        }
+        return team;
+    }
 }

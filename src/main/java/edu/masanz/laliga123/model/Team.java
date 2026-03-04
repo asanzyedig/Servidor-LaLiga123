@@ -14,6 +14,9 @@ public class Team {
     public Team() {
     }
 
+    public Team(int idTeam, String nombre, String sede) {
+    }
+
     public int getId() {
         return id;
     }
