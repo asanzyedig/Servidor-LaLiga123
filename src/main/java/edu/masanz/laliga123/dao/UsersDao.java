@@ -76,7 +76,7 @@ public class UsersDao {
     }
 
     public static boolean actualizarUser(User user) {
-        String sql = "UPDATE user SET username = ?, password = ?, rol = ? WHERE id = ?";
+        String sql = "UPDATE users SET id = ?, username = ?, password = ?, rol = ? WHERE id = ?";
         Object[] params = {user.getId(), user.getUsername(), user.getPassword(), user.getRol()};
         ConnectionManager.ejecutarUpdateSQL(sql, params);
         return true;

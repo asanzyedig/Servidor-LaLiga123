@@ -51,11 +51,10 @@ public class UsersController {
         int idUser = Integer.parseInt(context.pathParam("id"));
         Map<String, Object> model = new HashMap<>();
         User user = UsersDao.obtenerUser(idUser);
+        model.put("eliminar", false);
         model.put("user",user);
-        if (user.getId() == 0) {
-            model.put("mensajeError", "Usuario no encontrado");
-        }
-        context.render("/templats/user.ftl");
+
+        context.render("/templates/user.ftl", model);
     }
 
     public static void editaUser(@NotNull Context context) {
@@ -67,7 +66,7 @@ public class UsersController {
         if (user.getId() == 0) {
             model.put("mensajeError", "Usuario no encontrado");
         }
-        context.render("/templates/form-user.ftl", model);
+        context.render("/templates/form-user-editar.ftl", model);
     }
 
     public static void editarUser(@NotNull Context context) {
@@ -84,8 +83,9 @@ public class UsersController {
     public static void addUser(@NotNull Context context) {
         Map<String, Object> model = new HashMap<>();
         User user = new User();
+        model.put("agregar", true);
         model.put("user",user);
-        context.render("/templates/form-user.ftl", model);
+        context.render("/templates/form-user-add.ftl", model);
     }
 
     public static void crearUser(@NotNull Context context) {

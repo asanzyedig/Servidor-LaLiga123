@@ -17,7 +17,7 @@ public class Main {
 
         logger.info("ARRANCANDO APLICACION");
 
-        ConnectionManager.conectar("LaLiga123","root","root");
+        ConnectionManager.conectar("LaLiga123","root","roo7");
 
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("public");
