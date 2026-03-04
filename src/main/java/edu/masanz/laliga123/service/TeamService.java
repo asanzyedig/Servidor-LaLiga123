@@ -10,4 +10,20 @@ public class TeamService {
     public static Team obtenerEquipo(int id){
         return ITeamDao.obtenerTeam(id);
     }
+
+    public static Team guardarEquipo(Team team) {
+        return ITeamDao.guardarEquipo(team);
+    }
+
+    public static Team obtenerTeam(int idTeam) {
+        return null;
+    }
+
+    public static boolean actualizarTeam(Team team) {
+        return false;
+    }
+
+    public static boolean eliminarNota(int idTeam) {
+        return false;
+    }
 }
