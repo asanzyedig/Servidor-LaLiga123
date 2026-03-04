@@ -108,14 +108,6 @@ input[type=button], input[type=submit], input[type=reset] {
     float: left;
     width:25%;
 }
-.w75 {
-    float: left;
-    width:75%;
-}
-.w50 {
-    float: left;
-    width:50%;
-}
 .container::after {
     content: "";
     clear: both;

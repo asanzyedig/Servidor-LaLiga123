@@ -53,8 +53,11 @@ public class UsersController {
         User user = UsersDao.obtenerUser(idUser);
         model.put("eliminar", false);
         model.put("user",user);
-
+        if (user.getId() == 0) {
+            model.put("mensajeError", "Nota no encontrada");
+        }
         context.render("/templates/user.ftl", model);
+
     }
 
     public static void editaUser(@NotNull Context context) {
