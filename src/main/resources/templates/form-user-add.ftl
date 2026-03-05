@@ -14,20 +14,12 @@
 
         <#assign destino = "/add-user">
 
-      <#--  <#assign id = 0> -->
-
         <#assign username = "">
         <#assign password = "">
         <#assign rol = 0>
 
         <form action="${destino}" method="POST">
         <div class="container">
-        <#--
-            <div class="w25">
-                <label for="id">ID</label>
-                <input type="text" name="id" value="${id}">
-            </div>
-           -->
             <div class="w25">
                 <label for="username">Usuario</label>
                 <input type="text" name="username" value="${username}">

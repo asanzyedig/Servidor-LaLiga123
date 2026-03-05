@@ -53,7 +53,7 @@ public class UsersController {
         User user = UsersDao.obtenerUser(idUser);
         model.put("eliminar", false);
         model.put("user",user);
-        if (user.getId() == 0) {
+        if (idUser == 0) {
             model.put("mensajeError", "Nota no encontrada");
         }
         context.render("/templates/user.ftl", model);
@@ -66,7 +66,7 @@ public class UsersController {
         User user = UsersDao.obtenerUser(idUser);
         model.put("agregar", false);
         model.put("user", user);
-        if (user.getId() == 0) {
+        if (idUser == 0) {
             model.put("mensajeError", "Usuario no encontrado");
         }
         context.render("/templates/form-user-editar.ftl", model);
@@ -79,7 +79,7 @@ public class UsersController {
         int rol = Integer.parseInt(context.formParam("rol"));
         User user = new User(username,password,rol);
         if (UsersDao.actualizarUser(user)) {
-            context.redirect("/user/" + user.getId());
+            context.redirect("/user/" + idUser);
         }
     }
 
