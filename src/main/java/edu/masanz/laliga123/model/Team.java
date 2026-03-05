@@ -6,9 +6,10 @@ public class Team {
     private String sede;
     private String image;
 
-    public Team(String name, String sede) {
+    public Team(String name, String sede, String image) {
         this.name = name;
         this.sede = sede;
+        this.image = image;
     }
 
     public Team() {

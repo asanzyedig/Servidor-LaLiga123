@@ -45,13 +45,11 @@ public class EquiposController {
     public static void crearEquipo(@NotNull Context context) {
         String nombre = context.formParam("name");
         String sede = context.formParam("sede");
-        Team team = new Team(nombre, sede);
+        String image = context.formParam("image");
+        Team team = new Team(nombre, sede, image);
         team = TeamService.guardarEquipo(team);
         if (team.getId() != 0) {
-            context.redirect("/templates/equipos/gestionEquipos.ftl");
-//            response.redirect("/nota/" + nota.getId());
-//        }else {
-//            context.redirect("/error");
+            context.redirect("/lista-equipos");
         }
     }
 
@@ -59,7 +57,7 @@ public class EquiposController {
         Map<String, Object> model = new HashMap<>();
         Team team = new Team();
         model.put("agregar", true);
-        model.put("nota", team);
+        model.put("team", team);
         context.render("/templates/equipos/perfilEquipo.ftl", model);
     }
 

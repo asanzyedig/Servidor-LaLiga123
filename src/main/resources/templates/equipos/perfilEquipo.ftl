@@ -29,10 +29,18 @@
             <#assign esIcono = false>
         </#if>
 
+        <#if agregar>
+            <assign nam = "">
+            <assign sed = "">
+        <#else>
+            <assign nam = ${team.name}>
+            <assign sed = ${team.sede}>
+        </#if>
+
         <div id="menu">
         </div>
             <div id="botones">
-                <form action="" method="get">
+                <form action="" method="post">
                     <div class="fila-img">
                         <#if esIcono>
                             <i class="${ima}" style="font-size: 50px;"></i>
@@ -43,17 +51,20 @@
                         <input type="file" name="selImg" id="selImg">
                     </div>
                     <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name" value="${team.name}">
+                    <input type="text" name="name" id="name" value="${nam}">
                     <label for="sede">Sede principal:</label>
-                    <input type="text" name="sede" id="sede" value="${team.sede}">
+                    <input type="text" name="sede" id="sede" value="${sed}">
+                    <#if agregar>
+                        <input type="submit" value="Crear Equipo">
+                        <button onclick="location.href='/equipos'">Crear Equipo</button>
+                    <#else>
+                    <input type="submit" value="Guardar Cambios">
+                        <button onclick="location.href='/equipos'">Guardar Cambios</button>
+                    </#if>
                 </form>
-                <#if !team??>
-                    <button onclick="location.href='/equipos'">Crear Equipo</button>
-                <#else>
-                    <button onclick="location.href='/equipos'">Guardar Cambios</button>
-                </#if>
 
-                    <button onclick="location.href='/lista-equipos'">Atrás</button>
+
+                <button onclick="location.href='/lista-equipos'">Atrás</button>
             </div>
 
             <#include "/templates/footer.ftl">

@@ -48,10 +48,10 @@ public class ITeamDao {
     public static Team guardarEquipo(Team team) {
         String sql = "INSERT INTO teams (name, sede, image) VALUES (?, ?, ?)";
         Object[] params = {team.getName(), team.getSede(), team.getImage()};
-        long id = ConnectionManager.ejecutarInsertSQL(sql, params);
+        int id = (int) ConnectionManager.ejecutarInsertSQL(sql, params);
         System.out.println(id);
         if (id > 0){
-            //team.setName();
+            team.setId(id);
         }
         return team;
     }
