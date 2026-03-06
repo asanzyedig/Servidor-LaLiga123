@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,60 +14,60 @@
 <body>
     <div class="main">
         <div class="logo">
-        <a href="/inicio"><img id="logo" alt="logo_laliga" src="/img/LaLiga_123.png"></a>
-
+            <a href="/inicio"><img id="logo" alt="logo_laliga" src="/img/LaLiga_123.png"></a>
             <div class="ruta">
                 <p>Inicio / Equipos / Equipo</p>
             </div>
         </div>
 
-        <#if !team.image??>
+        <#-- Lógica simplificada: si 'agregar' es true, campos vacíos -->
+        <#if agregar>
             <#assign ima = "fa-solid fa-circle-user">
             <#assign esIcono = true>
+            <#assign nam = "">
+            <#assign sed = "">
         <#else>
-            <#assign ima = team.image>
-            <#assign esIcono = false>
+            <#-- Si hay imagen en team, la usamos como base64, si no, icono -->
+            <#assign ima = (team.image)! "">
+            <#assign esIcono = (ima == "")>
+            <#assign nam = team.name! "">
+            <#assign sed = team.sede! "">
         </#if>
 
-        <#if agregar>
-            <assign nam = "">
-            <assign sed = "">
-        <#else>
-            <assign nam = ${team.name}>
-            <assign sed = ${team.sede}>
-        </#if>
 
-        <div id="menu">
-        </div>
-            <div id="botones">
-                <form action="" method="post">
-                    <div class="fila-img">
-                        <#if esIcono>
-                            <i class="${ima}" style="font-size: 50px;"></i>
-                        <#else>
-                            <img src="${ima}" alt="Logo equipo">
-                        </#if>
-                        <label for="selImg" class="btn-file">Seleccionar imagen</label>
-                        <input type="file" name="selImg" id="selImg">
-                    </div>
-                    <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name" value="${nam}">
-                    <label for="sede">Sede principal:</label>
-                    <input type="text" name="sede" id="sede" value="${sed}">
-                    <#if agregar>
-                        <input type="submit" value="Crear Equipo">
-                        <button onclick="location.href='/equipos'">Crear Equipo</button>
+        <div id="botones">
+            <#-- Usamos una ruta genérica como /guardar-equipo -->
+            <form action="/guardar-equipo" method="post">
+
+                <#-- ESTA LÍNEA ES LA CLAVE -->
+                <#-- Si agregar es true, team.id será 0. Si es false, será el ID real -->
+                <input type="hidden" name="id" value="${(team.id)!0}">
+
+                <div class="fila-img">
+                    <#if esIcono>
+                        <i class="fa-solid fa-circle-user" style="font-size: 50px;"></i>
                     <#else>
-                    <input type="submit" value="Guardar Cambios">
-                        <button onclick="location.href='/equipos'">Guardar Cambios</button>
+                        <img src="data:image/png;base64,${ima}" alt="Logo equipo" style="width:100px;">
                     </#if>
-                </form>
+                </div>
 
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name" value="${nam}" required>
 
-                <button onclick="location.href='/lista-equipos'">Atrás</button>
-            </div>
+                <label for="sede">Sede principal:</label>
+                <input type="text" name="sede" id="sede" value="${sed}" required>
 
-            <#include "/templates/footer.ftl">
+                <#if agregar>
+                    <input type="submit" value="Crear Equipo">
+                <#else>
+                    <input type="submit" value="Guardar Cambios">
+                </#if>
+            </form>
+            <button type="button" onclick="location.href='/lista-equipos'">Atrás</button>
         </div>
-    </body>
+
+
+        <#include "/templates/footer.ftl">
+    </div>
+</body>
 </html>

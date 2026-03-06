@@ -39,7 +39,7 @@
                         <p>${team.name}</p>
 
                         <i class="fa-solid fa-trash"></i>
-                        <a href="/perfil-equipo/${team.id}"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a href="/editar-equipo/${team.id}"><i class="fa-regular fa-pen-to-square"></i></a>
                     </div>
                     <hr>
                 </#list>

@@ -31,6 +31,7 @@
 
             <button onclick="location.href='/crear-equipo'">Crear Equipos</button>
             <button onclick="location.href='/lista-equipos'">Modificar equipos</button>
+            <button onclick="location.href='/lista-equipos'">Listar equipos</button>
             <button onclick="location.href='/inicio'">Atrás</button>
         </div>
 

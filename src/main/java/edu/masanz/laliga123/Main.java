@@ -45,8 +45,10 @@ public class Main {
         app.get("/gestion-equipos", EquiposController::gestionEquipos);
         app.get("/lista-equipos", EquiposController::listarEquipos);
         app.get("/perfil-equipo/{id}", EquiposController::mostrarPerfil);
-        app.get("/crear-equipo", EquiposController::servirCrearEquipo);
+        app.get("/crear-equipo", EquiposController::addEquipo);
         app.post("/crear-equipo", EquiposController::crearEquipo);
+        app.get("/editar-equipo/{id}", EquiposController::verEditarEquipo);
+        app.post("/guardar-equipo", EquiposController::guardarEquipo);
 
     }
 

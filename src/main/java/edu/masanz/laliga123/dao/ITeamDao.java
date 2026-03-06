@@ -55,4 +55,28 @@ public class ITeamDao {
         }
         return team;
     }
+
+
+
+    public static Team obtenerIdTeam(int id) {
+        String sql = "select id from teams where id = ?";
+        Object[] params = {id};
+        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
+        Team team = new Team();
+        if (resultado != null && resultado.length > 0){
+            for (int i = 0; i < resultado.length; i++) {
+                team.setId((Integer) resultado[i][0]);
+                team.setName((String) resultado[i][1]);
+                team.setSede((String) resultado[i][2]);
+                team.setImage((String) resultado[i][3]);
+            }
+        }
+        return team;
+    }
+
+    public static void actualizarEquipo(Team team) {
+        String sql = "UPDATE teams SET name = ?, sede = ?, image = ? WHERE id = ?";
+        Object[] params = {team.getName(), team.getSede(), team.getImage(), team.getId()};
+        ConnectionManager.ejecutarUpdateSQL(sql, params);
+    }
 }

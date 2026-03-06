@@ -26,4 +26,8 @@ public class TeamService {
     public static boolean eliminarNota(int idTeam) {
         return false;
     }
+
+    public static Team buscarPorId(int id) {
+        return ITeamDao.obtenerTeam(id);
+    }
 }
