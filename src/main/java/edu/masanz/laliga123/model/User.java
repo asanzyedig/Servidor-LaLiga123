@@ -1,8 +1,7 @@
 package edu.masanz.laliga123.model;
 
-import java.io.Serializable;
 
-public class User implements Serializable {
+public class User {
 
     private int id;
     private String username;
@@ -10,6 +9,7 @@ public class User implements Serializable {
     private int rol;
 
     public User() {
+        this("", "", 0);
     }
 
     public User(String username, String password, int rol) {
@@ -18,6 +18,12 @@ public class User implements Serializable {
         this.rol = rol;
     }
 
+    public User(int id, String username, String password, int rol) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.rol = rol;
+    }
 
     public int getId() {
         return id;

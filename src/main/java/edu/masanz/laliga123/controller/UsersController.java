@@ -40,7 +40,7 @@ public class UsersController {
     public static void listarUsers(@NotNull Context context) {
         Map<String, Object> model = new HashMap<>();
 
-        List<User> users = UsersDao.obtenerUsers();
+        List<User> users = UsersService.obtenerUsers();
         model.put("usuarios", users);
 
         context.render("/templates/lista-users.ftl", model);
@@ -50,11 +50,11 @@ public class UsersController {
 
         int idUser = Integer.parseInt(context.pathParam("id"));
         Map<String, Object> model = new HashMap<>();
-        User user = UsersDao.obtenerUser(idUser);
+        User user = UsersService.obtenerUser(idUser);
         model.put("eliminar", false);
         model.put("user",user);
-        if (idUser == 0) {
-            model.put("mensajeError", "Nota no encontrada");
+        if (user.getId() == 0) {
+            model.put("mensajeError", "Usuario no encontrado");
         }
         context.render("/templates/user.ftl", model);
 
@@ -63,13 +63,13 @@ public class UsersController {
     public static void editaUser(@NotNull Context context) {
         int idUser = Integer.parseInt(context.pathParam("id"));
         Map<String, Object> model = new HashMap<>();
-        User user = UsersDao.obtenerUser(idUser);
+        User user = UsersService.obtenerUser(idUser);
         model.put("agregar", false);
         model.put("user", user);
         if (idUser == 0) {
             model.put("mensajeError", "Usuario no encontrado");
         }
-        context.render("/templates/form-user-editar.ftl", model);
+        context.render("/templates/form-user.ftl", model);
     }
 
     public static void editarUser(@NotNull Context context) {
@@ -77,9 +77,9 @@ public class UsersController {
         String username = context.formParam("username");
         String password = context.formParam("password");
         int rol = Integer.parseInt(context.formParam("rol"));
-        User user = new User(username,password,rol);
-        if (UsersDao.actualizarUser(user)) {
-            context.redirect("/user/" + idUser);
+        User user = new User(idUser,username,password,rol);
+        if (UsersService.actualizarUser(user)) {
+            context.redirect("/user/" + user.getId());
         }
     }
 
@@ -96,7 +96,7 @@ public class UsersController {
         String password = context.formParam("password");
         int rol = Integer.parseInt(context.formParam("rol"));
         User user = new User(username,password,rol);
-        user = UsersDao.guardarUser(user);
+        user = UsersService.guardarUser(user);
         if (user.getId() != 0) {
             context.redirect("/lista-users");
         }
@@ -106,7 +106,7 @@ public class UsersController {
 
         int idUser = Integer.parseInt(context.pathParam("id"));
         Map<String,Object> model = new HashMap<>();
-        User user = UsersDao.obtenerUser(idUser);
+        User user = UsersService.obtenerUser(idUser);
         model.put("eliminar", true);
         model.put("user", user);
         if (user.getId() == 0) {
@@ -117,7 +117,7 @@ public class UsersController {
 
     public static void eliminarUser(@NotNull Context context) {
         int idUser = Integer.parseInt(context.pathParam("id"));
-        if (UsersDao.eliminarUser(idUser)) {
+        if (UsersService.eliminarUser(idUser)) {
             context.redirect("/lista-users");
         }
     }

@@ -2,17 +2,29 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Editar Usuario</title>
+    <title><#if agregar>Crear Usuario<#else>Editar Usuario</#if></title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-        <h1>EDITAR USUARIO</h1>
+        <#if agregar>
+                <h1>CREAR USUARIO</h1>
+            <#else>
+                <h1>EDITAR USUARIO</h1>
+            </#if>
 
     <a href="/lista-users">Regresar al listado</a>
 
     <br/><br/>
 
+        <#if mensajeError??>
+                <div class="error">${mensajeError}</div>
+        </#if>
+
         <#assign destino = "/edita-user/"+user.id>
+
+        <#if agregar>
+                <#assign destino = "/crea-nota">
+        </#if>
 
         <form action="${destino}" method="POST">
         <div class="container">
