@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/perfilEquipo.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
@@ -20,14 +19,12 @@
             </div>
         </div>
 
-        <#-- Lógica simplificada: si 'agregar' es true, campos vacíos -->
         <#if agregar>
             <#assign ima = "fa-solid fa-circle-user">
             <#assign esIcono = true>
             <#assign nam = "">
             <#assign sed = "">
         <#else>
-            <#-- Si hay imagen en team, la usamos como base64, si no, icono -->
             <#assign ima = (team.image)! "">
             <#assign esIcono = (ima == "")>
             <#assign nam = team.name! "">
@@ -36,11 +33,8 @@
 
 
         <div id="botones">
-            <#-- Usamos una ruta genérica como /guardar-equipo -->
             <form action="/guardar-equipo" method="post">
 
-                <#-- ESTA LÍNEA ES LA CLAVE -->
-                <#-- Si agregar es true, team.id será 0. Si es false, será el ID real -->
                 <input type="hidden" name="id" value="${(team.id)!0}">
 
                 <div class="fila-img">
@@ -65,7 +59,6 @@
             </form>
             <button type="button" onclick="location.href='/lista-equipos'">Atrás</button>
         </div>
-
 
         <#include "/templates/footer.ftl">
     </div>

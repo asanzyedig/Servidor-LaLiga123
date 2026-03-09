@@ -122,7 +122,7 @@ public class EquiposController {
     public static void verEditarEquipo(@NotNull Context context) {
         int id = Integer.parseInt(context.pathParam("id"));
         Team team = ITeamDao.obtenerTeam(id);
-        if (team != null) {
+        if (team.getId() != 0) {
             Map<String, Object> model = new HashMap<>();
             model.put("agregar", false);
             model.put("team", team);

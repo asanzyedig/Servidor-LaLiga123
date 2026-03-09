@@ -16,6 +16,9 @@ public class Team {
     }
 
     public Team(int idTeam, String nombre, String sede) {
+        this.id = idTeam;
+        this.name = nombre;
+        this.sede = sede;
     }
 
     public int getId() {
