@@ -1,6 +1,7 @@
 package edu.masanz.laliga123;
 
 import edu.masanz.laliga123.controller.EquiposController;
+import edu.masanz.laliga123.controller.PartidosController;
 import edu.masanz.laliga123.controller.UsersController;
 import edu.masanz.laliga123.database.ConnectionManager;
 import io.javalin.Javalin;
@@ -49,6 +50,10 @@ public class Main {
         app.post("/crear-equipo", EquiposController::crearEquipo);
         app.get("/editar-equipo/{id}", EquiposController::verEditarEquipo);
         app.post("/guardar-equipo", EquiposController::guardarEquipo);
+
+        // Partidos
+        app.get("/gestion-partidos", PartidosController::gestionPartidos);
+        app.get("/lista-partidos", PartidosController::listarPartidos);
 
     }
 
