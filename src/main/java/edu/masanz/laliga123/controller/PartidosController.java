@@ -19,8 +19,6 @@ public class PartidosController {
     }
 
     public static void listarPartidos(@NotNull Context context) {
-
-
         Map<String,Object> model = new HashMap<>();
 
         List<Partido> partidos = PartidosService.obtenerPartidos();

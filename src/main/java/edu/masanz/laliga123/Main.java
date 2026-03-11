@@ -1,6 +1,7 @@
 package edu.masanz.laliga123;
 
 import edu.masanz.laliga123.controller.EquiposController;
+import edu.masanz.laliga123.controller.EstadisticasController;
 import edu.masanz.laliga123.controller.PartidosController;
 import edu.masanz.laliga123.controller.UsersController;
 import edu.masanz.laliga123.database.ConnectionManager;
@@ -52,6 +53,11 @@ public class Main {
         app.post("/guardar-equipo", EquiposController::guardarEquipo);
         app.get("/elimina-equipo/{id}", EquiposController::delEquipo);
         app.post("/elimina-equipo/{id}", EquiposController::eliminarEquipo);
+
+        // Estadisticas
+        app.get("/estadisticas", EstadisticasController::estadisticas);
+        app.get("/clasificacion", EstadisticasController::verClasificacion);
+        app.get("/partidos", EstadisticasController::verPartidos);
 
         // Partidos
         app.get("/gestion-partidos", PartidosController::gestionPartidos);
