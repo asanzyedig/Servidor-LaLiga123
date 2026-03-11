@@ -54,9 +54,10 @@ public class Main {
         app.post("/elimina-equipo/{id}", EquiposController::eliminarEquipo);
 
         // Partidos
-        app.get("/gestion-partidos", PartidosController::gestionPartidos);
         app.get("/lista-partidos", PartidosController::listarPartidos);
-
+        app.get("/partido/{id}", PartidosController::servirPartido);
+        app.get("/editar-partido/{id}", PartidosController::verEditarPartido);
+        app.post("/editar-partido/{id}", PartidosController::editarPartido);
     }
 
 }

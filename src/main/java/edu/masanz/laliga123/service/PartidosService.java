@@ -11,4 +11,14 @@ public class PartidosService {
 
         return PartidosDao.obtenerPartidos();
     }
+
+    public static Partido obtenerPartido(int idPartido) {
+
+        return PartidosDao.obtenerPartidos(idPartido);
+    }
+
+    public static boolean actualizarPartido(Partido partido) {
+
+        return PartidosDao.actualizarPartido(partido);
+    }
 }

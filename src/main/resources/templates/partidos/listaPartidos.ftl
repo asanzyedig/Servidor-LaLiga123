@@ -23,13 +23,18 @@
                 <#list partidos as partido>
                     <div class="participante">
 
-                        <i class="fa-solid fa-trash"></i>
+                        <p>${partido.id}</p>
+                        <p>${partido.jornada}</p>
+                        <p>${partido.idEquipo1}</p>
+                        <p>${partido.idEquipo2}</p>
+
+                        <a href="/elimina-partido/${partido.id}"><i class="fa-solid fa-trash"></i></a>
                         <a href="/editar-partido/${partido.id}"><i class="fa-regular fa-pen-to-square"></i></a>
                     </div>
                     <hr>
                 </#list>
             </div>
-            <button onclick="location.href='/gestion-partidos'">Atrás</button>
+            <button onclick="location.href='/inicio'">Atrás</button>
         </div>
 
        <#include "/templates/footer.ftl">
