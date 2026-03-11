@@ -38,7 +38,7 @@
 
                         <p>${team.name}</p>
 
-                        <i class="fa-solid fa-trash"></i>
+                        <a href="/elimina-equipo/${team.id}"><i class="fa-solid fa-trash"></i></a>
                         <a href="/editar-equipo/${team.id}"><i class="fa-regular fa-pen-to-square"></i></a>
                     </div>
                     <hr>
@@ -49,6 +49,5 @@
 
        <#include "/templates/footer.ftl">
     </div>
-    
 </body>
 </html>

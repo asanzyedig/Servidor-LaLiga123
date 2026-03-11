@@ -16,7 +16,7 @@ public class TeamService {
     }
 
     public static Team obtenerTeam(int idTeam) {
-        return null;
+        return ITeamDao.obtenerTeam(idTeam);
     }
 
     public static boolean actualizarTeam(Team team) {
@@ -24,7 +24,7 @@ public class TeamService {
     }
 
     public static boolean eliminarNota(int idTeam) {
-        return false;
+        return ITeamDao.eliminarEquipo(idTeam);
     }
 
     public static Team buscarPorId(int id) {

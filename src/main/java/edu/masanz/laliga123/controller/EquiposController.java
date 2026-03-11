@@ -25,6 +25,8 @@ public class EquiposController {
         } else if (team.getId() == 0) {
             model.put("mensajeError", "Equipo no encontrada");
         }
+        model.put("agregar", false);
+        model.put("eliminar", false);
         context.render("/templates/equipos/perfilEquipo.ftl", model);
     }
 
@@ -63,51 +65,25 @@ public class EquiposController {
         Team team = new Team();
         model.put("agregar", true);
         model.put("team", team);
+        model.put("eliminar", false);
         context.render("/templates/equipos/perfilEquipo.ftl", model);
-    }
-
-//    public static void servirCrearEquipo(@NotNull Context context) {
-//        Map<String, Object> model = new HashMap<>();
-//        Team team = new Team();
-//        model.put("agregar", true);
-//        model.put("team", team);
-//        context.render("/templates/equipos/perfilEquipo.ftl", model);
-//    }
-
-    public static void servirEditarEquipo(Context context){
-        int idTeam = Integer.parseInt(context.pathParam("id"));
-        Map<String, Object> model = new HashMap<>();
-        Team team = TeamService.obtenerTeam(idTeam);
-        model.put("agregar", false);
-        model.put("team", team);
-        if (team.getId() == 0) {
-            model.put("mensajeError", "Equipo no encontrado");
-        }
-        context.render("/templates/equipos/perfilEquipo.ftl", model);
-    }
-
-    public static void editarEquipo(Context context){
-        int idTeam = Integer.parseInt(context.pathParam("id"));
-        String nombre = context.formParam("name");
-        String sede = context.formParam("sede");
-        Team team = new Team(idTeam, nombre, sede);
-        if (TeamService.actualizarTeam(team)) {
-            context.redirect("/templates/equipos/perfilEquipo.ftl" + team.getId());
-        }else {
-            context.redirect("/error");
-        }
     }
 
     public static void servirEliminarEquipo(Context context){
         int idTeam = Integer.parseInt(context.pathParam("id"));
         Map<String, Object> model = new HashMap<>();
         Team team = TeamService.obtenerTeam(idTeam);
+        model.put("agregar", false);
         model.put("eliminar", true);
         model.put("team", team);
         if (team.getId() == 0) {
             model.put("mensajeError", "Equipo no encontrado");
         }
         context.render("/templates/equipos/perfilEquipo.ftl", model);
+    }
+
+    public static void delEquipo(Context context){
+        servirEliminarEquipo(context);
     }
 
     public static void eliminarEquipo(Context context){
@@ -126,6 +102,7 @@ public class EquiposController {
             Map<String, Object> model = new HashMap<>();
             model.put("agregar", false);
             model.put("team", team);
+            model.put("eliminar", false);
             context.render("/templates/equipos/perfilEquipo.ftl", model);
         } else {
             context.redirect("/lista-equipos");

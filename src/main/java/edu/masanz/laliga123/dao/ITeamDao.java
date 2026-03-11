@@ -79,4 +79,11 @@ public class ITeamDao {
         Object[] params = {team.getName(), team.getSede(), team.getImage(), team.getId()};
         ConnectionManager.ejecutarUpdateSQL(sql, params);
     }
+
+    public static boolean eliminarEquipo(int id) {
+        String sql = "DELETE FROM teams WHERE id = ?";
+        Object[] params = {id};
+        int resultado = ConnectionManager.ejecutarUpdateSQL(sql, params);
+        return resultado > 0;
+    }
 }

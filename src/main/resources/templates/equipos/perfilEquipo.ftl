@@ -33,31 +33,39 @@
 
 
         <div id="botones">
-            <form action="/guardar-equipo" method="post">
+            <#if eliminar>
+                <h2>¿Estás seguro de que deseas eliminar el equipo ${team.name}?</h2>
+                <form action="/elimina-equipo/${team.id}" method="POST">
+                    <input type="submit" value="Confirmar Eliminación">
+                </form>
+                <button type="button" onclick="location.href='/lista-equipos'">Cancelar</button>
+            <#else>
+                <form action="/guardar-equipo" method="post">
 
-                <input type="hidden" name="id" value="${(team.id)!0}">
+                    <input type="hidden" name="id" value="${(team.id)!0}">
 
-                <div class="fila-img">
-                    <#if esIcono>
-                        <i class="fa-solid fa-circle-user" style="font-size: 50px;"></i>
+                    <div class="fila-img">
+                        <#if esIcono>
+                            <i class="fa-solid fa-circle-user" style="font-size: 50px;"></i>
+                        <#else>
+                            <img src="data:image/png;base64,${ima}" alt="Logo equipo" style="width:100px;">
+                        </#if>
+                    </div>
+
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" value="${nam}" required>
+
+                    <label for="sede">Sede principal:</label>
+                    <input type="text" name="sede" id="sede" value="${sed}" required>
+
+                    <#if agregar>
+                        <input type="submit" value="Crear Equipo">
                     <#else>
-                        <img src="data:image/png;base64,${ima}" alt="Logo equipo" style="width:100px;">
+                        <input type="submit" value="Guardar Cambios">
                     </#if>
-                </div>
-
-                <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" value="${nam}" required>
-
-                <label for="sede">Sede principal:</label>
-                <input type="text" name="sede" id="sede" value="${sed}" required>
-
-                <#if agregar>
-                    <input type="submit" value="Crear Equipo">
-                <#else>
-                    <input type="submit" value="Guardar Cambios">
-                </#if>
-            </form>
-            <button type="button" onclick="location.href='/lista-equipos'">Atrás</button>
+                </form>
+                <button type="button" onclick="location.href='/lista-equipos'">Atrás</button>
+            </#if>
         </div>
 
         <#include "/templates/footer.ftl">
