@@ -30,4 +30,33 @@ public class PartidosDao {
         }
         return partidos;
     }
+
+    public static Partido obtenerPartidos(int idPartido) {
+
+        String sql = "SELECT id, jornada, idEquipo1, idEquipo2, puntuacionEquipo1, puntuacionEquipo2, ganador FROM partidos WHERE id = ? ORDER BY id DESC LIMIT 1";
+        Object[] params = {idPartido};
+        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
+        if (resultado != null && resultado.length == 1) {
+            Partido partido = new Partido();
+
+           partido.setId( (int) resultado[0][0]);
+           partido.setJornada((int) resultado[0][1]);
+           partido.setIdEquipo1((int) resultado[0][2]);
+           partido.setIdEquipo2( (int) resultado[0][3]);
+           partido.setPuntuacionEquipo1( (int) resultado[0][4]);
+           partido.setPuntuacionEquipo2( (int) resultado[0][5]);
+           partido.setGanador( (int) resultado[0][6]);
+
+            return partido;
+        }
+        return null;
+    }
+
+    public static boolean actualizarPartido(Partido partido) {
+
+        String sql = "UPDATE partidos SET jornada = ?, idEquipo1 = ?, idEquipo2 = ?, puntuacionEquipo1 = ?, puntuacionEquipo2 = ?, ganador = ? WHERE id = ?";
+        Object[] params = {partido.getJornada(), partido.getIdEquipo1(), partido.getIdEquipo2(), partido.getPuntuacionEquipo1(), partido.getPuntuacionEquipo2(), partido.getGanador(), partido.getId()};
+        ConnectionManager.ejecutarUpdateSQL(sql, params);
+        return true;
+    }
 }
