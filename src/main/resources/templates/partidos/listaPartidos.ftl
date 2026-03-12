@@ -16,17 +16,14 @@
                 <p>Partidos / Lista Partidos</p>
             </div>
         </div>
-
-
         <div id="botones">
             <div id="participantes">
                 <#list partidos as partido>
                     <div class="participante">
 
-                        <p>${partido.id}</p>
-                        <p>${partido.jornada}</p>
-                        <p>${partido.equipo1}</p>
-                        <p>${partido.equipo2}</p>
+                        <p>${listaEquipos[partido.idEquipo1?string]}</p>
+                        <p>VS</p>
+                        <p>${listaEquipos[partido.idEquipo2?string]}</p>
 
                         <a href="/editar-partido/${partido.id}"><i class="fa-regular fa-pen-to-square"></i></a>
                     </div>
@@ -36,8 +33,8 @@
             <button onclick="location.href='/inicio'">Atrás</button>
         </div>
 
-       <#include "/templates/footer.ftl">
-    </div>
+        <#include "/templates/footer.ftl">
+   </div>
 
 </body>
 </html>

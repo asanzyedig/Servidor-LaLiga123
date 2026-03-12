@@ -59,23 +59,4 @@ public class PartidosDao {
         ConnectionManager.ejecutarUpdateSQL(sql, params);
         return true;
     }
-
-    public static Partido guardarPartido(Partido partido) {
-
-        String sql = "INSERT INTO partidos (jornada, idEquipo1, idEquipo1, puntuacionEquipo1, puntuacionEquipo2, ganador) VALUES (?, ?, ?, ?, ?, ?)";
-        Object[] params = {partido.getJornada(), partido.getIdEquipo1(), partido.getIdEquipo2(), partido.getPuntuacionEquipo1(), partido.getPuntuacionEquipo2(), partido.getGanador()};
-        int id = (int) ConnectionManager.ejecutarInsertSQL(sql, params);
-        if (id > 0){
-            partido.setId(id);
-        }
-        return partido;
-    }
-
-    public static boolean eliminarPartido(int idPartido) {
-
-        String sql = "DELETE FROM partidos WHERE id = ?";
-        Object[] params = {idPartido};
-        ConnectionManager.ejecutarUpdateSQL(sql,params);
-        return true;
-    }
 }

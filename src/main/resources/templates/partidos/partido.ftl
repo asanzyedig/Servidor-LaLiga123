@@ -6,11 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-    <#if eliminar>
-        <h1>Eliminar el partido</h1>
-    <#else>
         <h1>Vista del partido</h1>
-    </#if>
     <a href="/lista-partidos">Volver a la lista</a>
     <br/><br/>
 
@@ -50,17 +46,9 @@
         </table>
 
         <br/><br/>
-        <#if eliminar>
-            <!-- TIENE QUE SER POST -->
-            <form action="/elimina-partido/${partido.id}" method="POST">
-                ¿Seguro que desea eliminar el partido? <input type="submit" value="Confirmar" />
-            </form>
-        <#else>
             <div>
-                <a href="/elimina-partido/${partido.id}">Eliminar</a>
                 <a href="/editar-partido/${partido.id}">Editar</a>
             </div>
-        </#if>
     </#if>
 </body>
 </html>

@@ -1,8 +1,10 @@
 package edu.masanz.laliga123.controller;
 
 import edu.masanz.laliga123.model.Partido;
+import edu.masanz.laliga123.model.Team;
 import edu.masanz.laliga123.model.User;
 import edu.masanz.laliga123.service.PartidosService;
+import edu.masanz.laliga123.service.TeamService;
 import edu.masanz.laliga123.service.UsersService;
 import io.javalin.http.Context;
 import org.jetbrains.annotations.NotNull;
@@ -19,8 +21,16 @@ public class PartidosController {
 
         List<Partido> partidos = PartidosService.obtenerPartidos();
         model.put("partidos", partidos);
-        context.render("/templates/partidos/listaPartidos.ftl", model);
 
+        List<Team> equipos = TeamService.obtenerEquipos();
+
+        Map<String, String> listaEquipos = new HashMap<>();
+        for (Team t : equipos) {
+            listaEquipos.put(String.valueOf(t.getId()), t.getName());
+        }
+
+        model.put("listaEquipos", listaEquipos);
+        context.render("/templates/partidos/listaPartidos.ftl", model);
     }
 
 
@@ -31,6 +41,7 @@ public class PartidosController {
         Map<String, Object> model = new HashMap<>();
         Partido partido = PartidosService.obtenerPartido(idPartido);
         model.put("partido", partido);
+
         if (idPartido == 0) {
             model.put("mensajeError", "Partido no encontrado");
         }
@@ -57,7 +68,6 @@ public class PartidosController {
         int idPartido = Integer.parseInt(context.pathParam("id"));
         Map<String, Object> model = new HashMap<>();
         Partido partido = PartidosService.obtenerPartido(idPartido);
-        model.put("eliminar", false);
         model.put("partido",partido);
         if (partido.getId() == 0) {
             model.put("mensajeError", "Partido no encontrado");

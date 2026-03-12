@@ -3,6 +3,8 @@ package edu.masanz.laliga123.service;
 import edu.masanz.laliga123.dao.ITeamDao;
 import edu.masanz.laliga123.model.Team;
 
+import java.util.List;
+
 public class TeamService {
 
 
@@ -29,5 +31,10 @@ public class TeamService {
 
     public static Team buscarPorId(int id) {
         return ITeamDao.obtenerTeam(id);
+    }
+
+    public static List<Team> obtenerEquipos() {
+
+        return ITeamDao.obtenerEquipos();
     }
 }
