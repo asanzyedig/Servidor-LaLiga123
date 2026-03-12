@@ -64,10 +64,6 @@ public class Main {
         app.get("/partido/{id}", PartidosController::servirPartido);
         app.get("/editar-partido/{id}", PartidosController::verEditarPartido);
         app.post("/editar-partido/{id}", PartidosController::editarPartido);
-        app.get("/crea-partido", PartidosController::addEquipo);
-        app.post("/crea-partido", PartidosController::crearEquipo);
-        app.get("/elimina-partido/{id}", PartidosController::delPartido);
-        app.post("/elimina-partido/{id}", PartidosController::eliminarPartido);
     }
 
 }

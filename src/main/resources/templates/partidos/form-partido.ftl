@@ -2,15 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title><#if agregar>Crear Partido<#else>Editar Partido</#if></title>
+    <title>Editar Partido</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-        <#if agregar>
-                <h1>CREAR PARTIDO</h1>
-            <#else>
+
                 <h1>EDITAR PARTIDO</h1>
-            </#if>
+
 
     <a href="/lista-partidos">Regresar al listado</a>
 
@@ -21,10 +19,6 @@
         </#if>
 
         <#assign destino = "/editar-partido/"+partido.id>
-
-        <#if agregar>
-                <#assign destino = "/crea-partido">
-        </#if>
 
         <form action="${destino}" method="POST">
         <div class="container">
