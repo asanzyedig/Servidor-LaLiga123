@@ -19,7 +19,7 @@ public class Main {
 
         logger.info("ARRANCANDO APLICACION");
 
-        ConnectionManager.conectar("LaLiga123","root","root");
+        ConnectionManager.conectar("LaLiga123","root","roo7");
 
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("public");
@@ -64,6 +64,10 @@ public class Main {
         app.get("/partido/{id}", PartidosController::servirPartido);
         app.get("/editar-partido/{id}", PartidosController::verEditarPartido);
         app.post("/editar-partido/{id}", PartidosController::editarPartido);
+        app.get("/crea-partido", PartidosController::addEquipo);
+        app.post("/crea-partido", PartidosController::crearEquipo);
+        app.get("/elimina-partido/{id}", PartidosController::delPartido);
+        app.post("/elimina-partido/{id}", PartidosController::eliminarPartido);
     }
 
 }

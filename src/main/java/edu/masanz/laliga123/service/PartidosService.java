@@ -21,4 +21,14 @@ public class PartidosService {
 
         return PartidosDao.actualizarPartido(partido);
     }
+
+    public static Partido guardarPartido(Partido partido) {
+
+        return PartidosDao.guardarPartido(partido);
+    }
+
+    public static boolean eliminarPartido(int idPartido) {
+
+        return PartidosDao.eliminarPartido(idPartido);
+    }
 }

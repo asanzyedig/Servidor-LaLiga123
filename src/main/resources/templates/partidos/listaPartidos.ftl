@@ -34,6 +34,7 @@
                     <hr>
                 </#list>
             </div>
+            <button onclick="location.href='/crea-partido'">Añadir Partido</button>
             <button onclick="location.href='/inicio'">Atrás</button>
         </div>
 

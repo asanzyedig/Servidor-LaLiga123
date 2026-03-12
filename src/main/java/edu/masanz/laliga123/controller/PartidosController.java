@@ -65,4 +65,50 @@ public class PartidosController {
         }
         context.render("/templates/partidos/partido.ftl", model);
     }
+
+    public static void addEquipo(@NotNull Context context) {
+        Map<String, Object> model = new HashMap<>();
+        Partido partido = new Partido();
+        model.put("agregar", true);
+        model.put("partido",partido);
+        context.render("/templates/partidos/form-partido-add.ftl", model);
+
+    }
+
+    public static void crearEquipo(@NotNull Context context) {
+
+        int jornada = Integer.parseInt(context.formParam("jornada"));
+        int idEquipo1 = Integer.parseInt(context.formParam("idEquipo1"));
+        int idEquipo2 = Integer.parseInt(context.formParam("idEquipo2"));
+        int puntuacionEquipo1 = Integer.parseInt(context.formParam("puntuacionEquipo1"));
+        int puntuacionEquipo2 = Integer.parseInt(context.formParam("puntuacionEquipo2"));
+        int ganador = Integer.parseInt(context.formParam("ganador"));
+        Partido partido = new Partido(jornada,idEquipo1,idEquipo2, puntuacionEquipo1,puntuacionEquipo2,ganador);
+        partido = PartidosService.guardarPartido(partido);
+        if (partido.getId() != 0) {
+            context.redirect("/lista-partidos");
+        }
+    }
+
+    public static void delPartido(@NotNull Context context) {
+
+        int idPartido = Integer.parseInt(context.pathParam("id"));
+        Map<String,Object> model = new HashMap<>();
+        Partido partido = PartidosService.obtenerPartido(idPartido);
+        model.put("eliminar", true);
+        model.put("partido", partido);
+        if (partido.getId() == 0) {
+            model.put("mensajeError", "Partido no encontrado");
+        }
+        context.render("/templates/partidos/partido.ftl", model);
+    }
+
+
+    public static void eliminarPartido(@NotNull Context context) {
+
+        int idPartido = Integer.parseInt(context.pathParam("id"));
+        if (PartidosService.eliminarPartido(idPartido)) {
+            context.redirect("/lista-partidos");
+        }
+    }
 }
