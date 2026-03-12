@@ -61,18 +61,31 @@
     </div>
 
     <script>
+        // Función que se encarga de mostrar u ocultar los partidos según la jornada
         function filtrarPartidos() {
+            // 1. Capturamos el valor actual del selector (dropdown) con id 'Jornada'
             const jornadaSeleccionada = document.getElementById('Jornada').value;
+
+            // 2. Seleccionamos todos los elementos HTML que tengan la clase 'partidos'
             const partidos = document.querySelectorAll('.partidos');
 
+            // 3. Recorremos cada uno de los elementos de partido encontrados
             partidos.forEach(partido => {
+                // Comprobamos si:
+                // a) No hay jornada seleccionada (valor vacío, por ejemplo "Todas")
+                // b) El atributo 'data-jornada' del HTML coincide con la seleccionada
                 if (jornadaSeleccionada === '' || partido.dataset.jornada === jornadaSeleccionada) {
+                    // Si cumple la condición, mostramos el elemento usando flexbox
                     partido.style.display = 'flex';
                 } else {
+                    // Si no coincide, ocultamos el elemento completamente de la vista
                     partido.style.display = 'none';
                 }
             });
         }
+
+        // 4. Escuchamos el evento 'DOMContentLoaded' para ejecutar el filtro
+        // en cuanto el HTML termine de cargar (evita que la lista parpadee al inicio)
         window.addEventListener('DOMContentLoaded', filtrarPartidos);
     </script>
 </body>
