@@ -19,21 +19,14 @@
         </div>
 
         <div id="selector">
-            <select name="Jornada" id="Jornada">
-                <option value="Default">Selecciona jornada</option>
-                <option value="J1">Jornada 1</option>
-                <option value="J2">Jornada 2</option>
-                <option value="J3">Jornada 3</option>
-                <option value="J4">Jornada 4</option>
-                <option value="J5">Jornada 5</option>
-                <option value="J6">Jornada 6</option>
-                <option value="J7">Jornada 7</option>
-                <option value="J8">Jornada 8</option>
-                <option value="J9">Jornada 9</option>
-                <option value="J10">Jornada 10</option>
-                <option value="J11">Jornada 11</option>
-                <option value="J12">Jornada 12</option>
-            </select>
+            <form method="GET" action="/clasificacion" style="display: inline;">
+                <select name="jornada" id="Jornada" onchange="this.form.submit()">
+                    <option value="">1</option>
+                    <#list jornadas as jornada>
+                        <option value="${jornada}" <#if jornadaSeleccionada == jornada>selected</#if>>Jornada ${jornada}</option>
+                    </#list>
+                </select>
+            </form>
         </div>
 
         <div id="clasificacion">
@@ -47,78 +40,23 @@
                     <th>P</th>
                     <th>Puntos</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td colspan="3"><img src="/img/barcelona-fc.jpg" alt=""> Barcelona</td>
-                    <td>14</td>
-                    <td>10</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>81</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td colspan="3"><img src="/img/barcelona-fc.jpg" alt=""> Real Madrid</td>
-                    <td>14</td>
-                    <td>10</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>79</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td colspan="3"><img src="/img/barcelona-fc.jpg" alt=""> Villarreal</td>
-                    <td>14</td>
-                    <td>10</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>73</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td colspan="3"><img src="/img/barcelona-fc.jpg" alt=""> Betis</td>
-                    <td>14</td>
-                    <td>10</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td colspan="3"><img src="/img/barcelona-fc.jpg" alt=""> Valencia</td>
-                    <td>14</td>
-                    <td>10</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>66</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td colspan="3"><img src="/img/barcelona-fc.jpg" alt=""> Sevilla</td>
-                    <td>14</td>
-                    <td>10</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>59</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td colspan="3"><img src="/img/barcelona-fc.jpg" alt=""> Levante</td>
-                    <td>14</td>
-                    <td>10</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td colspan="3"><img src="/img/barcelona-fc.jpg" alt=""> Elche</td>
-                    <td>14</td>
-                    <td>10</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>45</td>
-                </tr>
+                <#list clasificaciones as equipo>
+                    <#assign posicion = equipo?index + 1>
+                    <tr>
+                        <td>${posicion}</td>
+                        <td colspan="3">
+                            <#if equipo.imagen??>
+                                <img src="/img/${equipo.imagen}" alt="">
+                            </#if>
+                            ${equipo.nombre}
+                        </td>
+                        <td>${equipo.pj}</td>
+                        <td>${equipo.v}</td>
+                        <td>${equipo.e}</td>
+                        <td>${equipo.p}</td>
+                        <td>${equipo.puntos}</td>
+                    </tr>
+                </#list>
             </table>
         </div>
 
