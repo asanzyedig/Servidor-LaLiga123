@@ -42,6 +42,15 @@ public class PartidosController {
         Partido partido = PartidosService.obtenerPartido(idPartido);
         model.put("partido", partido);
 
+        List<Team> equipos = TeamService.obtenerEquipos();
+
+        Map<String, String> listaEquipos = new HashMap<>();
+        for (Team t : equipos) {
+            listaEquipos.put(String.valueOf(t.getId()), t.getName());
+        }
+
+        model.put("listaEquipos", listaEquipos);
+
         if (idPartido == 0) {
             model.put("mensajeError", "Partido no encontrado");
         }
@@ -59,7 +68,7 @@ public class PartidosController {
         int ganador = Integer.parseInt(context.formParam("ganador"));
         Partido partido = new Partido(idPartido,jornada, idEquipo1, idEquipo2, puntuacionEquipo1, puntuacionEquipo2, ganador);
         if (PartidosService.actualizarPartido(partido)) {
-            context.redirect("/partido/" + partido.getId());
+            context.redirect("/lista-partidos");
         }
     }
 

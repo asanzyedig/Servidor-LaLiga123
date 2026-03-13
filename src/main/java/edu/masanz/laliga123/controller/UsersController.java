@@ -56,7 +56,7 @@ public class UsersController {
         if (user.getId() == 0) {
             model.put("mensajeError", "Usuario no encontrado");
         }
-        context.render("/templates/user.ftl", model);
+        context.render("/templates/form-user.ftl", model);
 
     }
 
@@ -79,7 +79,7 @@ public class UsersController {
         int rol = Integer.parseInt(context.formParam("rol"));
         User user = new User(idUser,username,password,rol);
         if (UsersService.actualizarUser(user)) {
-            context.redirect("/user/" + user.getId());
+            context.redirect("/lista-users");
         }
     }
 
