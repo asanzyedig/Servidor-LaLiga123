@@ -15,7 +15,98 @@ public class EstadisticasController {
     }
 
     public static void verClasificacion(@NotNull Context context) {
-        context.render("/templates/estadisticas/verClasificaciones.ftl");
+        Map<String, Object> model = new HashMap<>();
+
+        // Recupera la lista de objetos 'Partido' desde la base de datos
+        List<Partido> partidos = PartidosService.obtenerPartidos();
+
+        // Set para recolectar qué números de jornada existen
+        Set<Integer> jornadasSet = new TreeSet<>();
+        for (Partido p : partidos) {
+            jornadasSet.add(p.getJornada());
+        }
+
+        // Leemos posible parámetro de consulta 'jornada'
+        String jornadaParam = context.queryParam("jornada");
+        Integer jornadaSeleccionada = null;
+        if (jornadaParam != null && !jornadaParam.isEmpty()) {
+            jornadaSeleccionada = Integer.parseInt(jornadaParam);
+        }
+
+        // Inicializamos la tabla con todos los equipos
+        Map<Integer, Map<String, Object>> tabla = new HashMap<>();
+        List<Team> equipos = TeamService.obtenerEquipos();
+        for (Team t : equipos) {
+            Map<String, Object> fila = new HashMap<>();
+            fila.put("id", t.getId());
+            fila.put("nombre", t.getName());
+            fila.put("imagen", t.getImage());
+            fila.put("pj", 0);
+            fila.put("v", 0);
+            fila.put("e", 0);
+            fila.put("p", 0);
+            fila.put("puntos", 0);
+            tabla.put(t.getId(), fila);
+        }
+
+        // Procesamos los partidos
+        for (Partido p : partidos) {
+            // Filtramos por jornada si se indicó
+            if (jornadaSeleccionada != null && p.getJornada() != jornadaSeleccionada) {
+                continue;
+            }
+
+            int id1 = p.getIdEquipo1();
+            int id2 = p.getIdEquipo2();
+
+            Map<String, Object> fila1 = tabla.get(id1);
+            Map<String, Object> fila2 = tabla.get(id2);
+
+            // Actualizar PJ
+            fila1.put("pj", ((Integer) fila1.get("pj")) + 1);
+            fila2.put("pj", ((Integer) fila2.get("pj")) + 1);
+
+            int g1 = p.getPuntuacionEquipo1();
+            int g2 = p.getPuntuacionEquipo2();
+
+            // Actualizar victorias, empates, derrotas
+            if (g1 > g2) {
+                fila1.put("v", ((Integer) fila1.get("v")) + 1);
+                fila2.put("p", ((Integer) fila2.get("p")) + 1);
+            } else if (g1 < g2) {
+                fila2.put("v", ((Integer) fila2.get("v")) + 1);
+                fila1.put("p", ((Integer) fila1.get("p")) + 1);
+            } else {
+                fila1.put("e", ((Integer) fila1.get("e")) + 1);
+                fila2.put("e", ((Integer) fila2.get("e")) + 1);
+            }
+
+            // Recalcular puntos
+            int puntos1 = ((Integer) fila1.get("v")) * 3 + ((Integer) fila1.get("e"));
+            int puntos2 = ((Integer) fila2.get("v")) * 3 + ((Integer) fila2.get("e"));
+            fila1.put("puntos", puntos1);
+            fila2.put("puntos", puntos2);
+        }
+
+        // Construimos la lista ordenada por puntos (desc), victorias (desc) y nombre
+        List<Map<String, Object>> clasificaciones = new ArrayList<>(tabla.values());
+        clasificaciones.sort((a, b) -> {
+            int pa = (Integer) a.get("puntos");
+            int pb = (Integer) b.get("puntos");
+            if (pb != pa) return Integer.compare(pb, pa);
+            int va = (Integer) a.get("v");
+            int vb = (Integer) b.get("v");
+            if (vb != va) return Integer.compare(vb, va);
+            String na = (String) a.get("nombre");
+            String nb = (String) b.get("nombre");
+            return na.compareToIgnoreCase(nb);
+        });
+
+        model.put("jornadas", new ArrayList<>(jornadasSet));
+        model.put("jornadaSeleccionada", jornadaSeleccionada);
+        model.put("clasificaciones", clasificaciones);
+
+        context.render("/templates/estadisticas/verClasificaciones.ftl", model);
     }
 
     public static void verPartidos(@NotNull Context context) {
