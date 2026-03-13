@@ -6,12 +6,13 @@
     <title>Laliga123 - Gestion de partidos</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/listaEquipos.css">
     <link rel="stylesheet" href="/css/fontawesome-free-7.1.0-web/css/all.min.css">
 </head>
 <body>
    <div class="main">
         <div class="logo">
-            <a href="/htmls/inicio.html"><img id="logo" alt="logo_laliga" src="/img/LaLiga_123.png"></a>
+            <a href="/inicio"><img id="logo" alt="logo_laliga" src="/img/LaLiga_123.png"></a>
             <div class="ruta">
                 <p>Equipos / Lista equipos</p>
             </div>

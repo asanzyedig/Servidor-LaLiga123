@@ -12,7 +12,7 @@
 <body>
      <div class="main">
         <div class="logo">
-            <a href="/htmls/inicio.html"><img id="logo" alt="logo_laliga" src="/img/LaLiga_123.png"></a>
+            <a href="/inicio"><img id="logo" alt="logo_laliga" src="/img/LaLiga_123.png"></a>
             <div class="ruta">
                 <p>Estadisticas / Clasificación</p>
             </div>
@@ -21,7 +21,7 @@
         <div id="selector">
             <form method="GET" action="/clasificacion" style="display: inline;">
                 <select name="jornada" id="Jornada" onchange="this.form.submit()">
-                    <option value="">1</option>
+                    <option value="">Selecciona jornada</option>
                     <#list jornadas as jornada>
                         <option value="${jornada}" <#if jornadaSeleccionada == jornada>selected</#if>>Jornada ${jornada}</option>
                     </#list>

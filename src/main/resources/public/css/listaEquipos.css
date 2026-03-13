@@ -1,0 +1,26 @@
+/* Alinear los botones de eliminar y editar a la derecha */
+.participante {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.participante p {
+    flex: 1;
+}
+
+.participante a {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.participante a:hover {
+    color: #d9534f;
+}
+
+.participante a:last-child {
+    margin-left: auto;
+}

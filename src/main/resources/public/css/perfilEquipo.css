@@ -72,7 +72,7 @@ div#botones label {
 div#botones input[type="text"], div#botones input[type="submit"] {
     font-size: 2.25vh;
     height: auto;
-    width: 70vw;
+    width: 65vw;
     border: none;
     padding: 2.1vh;
     border-radius: 20px;

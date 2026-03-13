@@ -11,7 +11,7 @@
 <body>
    <div class="main">
         <div class="logo">
-            <a href="/htmls/inicio.html"><img id="logo" alt="logo_laliga" src="/img/LaLiga_123.png"></a>
+            <a href="/inicio"><img id="logo" alt="logo_laliga" src="/img/LaLiga_123.png"></a>
             <div class="ruta">
                 <p>Partidos / Lista Partidos</p>
             </div>

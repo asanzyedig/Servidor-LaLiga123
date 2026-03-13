@@ -1,3 +1,11 @@
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 select {
     font-size: 2.25vh;
     margin-bottom: 3.5vh;
@@ -6,45 +14,106 @@ select {
     padding: 2.1vh;
     border-radius: 20px;
     text-align: center;
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
+
 .partidos {
     border: 0.2vh solid black;
     border-radius: 2vh;
     display: flex;
     width: 65%;
     margin-bottom: 2vh;
-    align-items: center;
-    
+    align-items: center; 
+    justify-content: center;
+    background-color: #fff;
+    overflow: hidden;
 }
-.equipos{
+
+.equipos {
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    justify-content: center;
+    padding: 1.5vh;
+    min-width: 0; 
 }
-.caja{
+
+.caja {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    width: 100%;
 }
 
 i {
     font-size: 5vh;
     margin-top: 0.5vh;
+    color: #333;
+}
+
+.caja p {
+    margin: 0;
+    font-size: 2vh;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-wrap: break-word;
+    max-width: 90%; 
+}
+
+.puntos {
+    margin: 1vh 0 0 0;
+    font-weight: bold;
+    font-size: 2.5vh;
+    color: #000;
 }
 
 .vs {
+    flex: 0 0 60px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
+    background-color: transparent;
 }
 
 .vs p {
     margin: 0;
     font-weight: bold;
+    font-size: 2.2vh;
+    color: #888;
+    text-transform: uppercase;
+}
+
+#atras {
+    margin-top: 3vh;
+    padding: 1.5vh 4vh;
+    border-radius: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
     font-size: 2vh;
+    transition: background-color 0.3s;
+}
+
+
+@media (max-width: 768px) {
+    .partidos {
+        width: 95%;
+    }
+    
+    .vs {
+        flex: 0 0 40px;
+    }
+    
+    .caja p {
+        font-size: 1.6vh;
+    }
 }
