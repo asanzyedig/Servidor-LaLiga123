@@ -75,6 +75,24 @@ public class UsersDao {
 
     }
 
+    public static User obtenerUser(String username) {
+        String sql = "SELECT id, username, password, rol FROM users WHERE username = ? ORDER BY id DESC LIMIT 1";
+        Object[] params = {username};
+        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
+        if (resultado != null && resultado.length == 1) {
+            User user = new User();
+
+            user.setId( (int) resultado[0][0]);
+            user.setUsername((String) resultado[0][1]);
+            user.setPassword((String) resultado[0][2]);
+            user.setRol( (int) resultado[0][3]);
+
+            return user;
+        }
+        return null;
+
+    }
+
     public static boolean actualizarUser(User user) {
         String sql = "UPDATE users SET username = ?, password = ?, rol = ? WHERE id = ?";
         Object[] params = {user.getUsername(), user.getPassword(), user.getRol(), user.getId()};
@@ -87,5 +105,17 @@ public class UsersDao {
         Object[] params = {idUser};
         ConnectionManager.ejecutarUpdateSQL(sql,params);
         return true;
+    }
+
+    public static boolean autenticar(String username, String password) {
+
+        User usuario = obtenerUser(username);
+
+        if (usuario != null) {
+            if (usuario.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

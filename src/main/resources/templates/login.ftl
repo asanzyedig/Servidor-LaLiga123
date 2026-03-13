@@ -19,9 +19,9 @@
         </div>
 
         <div id="login">
-            <form action="/inicio" >
-                <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
-                <input type="password" id="pass" name="pass" placeholder="Contraseña" required>
+            <form action="/login" method="POST" >
+                <input type="text" id="username" name="username" placeholder="Usuario" required>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
                 <br>
                 <br>
                 <input type="submit" name="enviar" id="enviar" value="Iniciar sesion"><br>

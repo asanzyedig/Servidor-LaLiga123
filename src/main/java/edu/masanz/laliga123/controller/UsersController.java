@@ -23,12 +23,16 @@ public class UsersController {
     }
 
     public static void hacerLogin(@NotNull Context context) {
-        String username = context.pathParam("username");
-        String password = context.pathParam("password");
-        UsersService.login(username,password);
+        String username = context.formParam("username");
+        String password = context.formParam("password");
 
-        context.redirect("/inicio");
+        boolean autenticar = UsersService.autenticar(username, password);
 
+        if (autenticar) {
+            context.redirect("/inicio");
+        } else {
+            context.render("/login");
+        }
     }
 
     public static void inicio(@NotNull Context context) {

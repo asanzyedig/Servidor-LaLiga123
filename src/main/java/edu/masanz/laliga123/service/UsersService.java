@@ -31,4 +31,9 @@ public class UsersService {
     public static boolean eliminarUser(int idUser) {
         return UsersDao.eliminarUser(idUser);
     }
+
+    public static boolean autenticar(String username, String password) {
+
+        return UsersDao.autenticar(username, password);
+    }
 }
