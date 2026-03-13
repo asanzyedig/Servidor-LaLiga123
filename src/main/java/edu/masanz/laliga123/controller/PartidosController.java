@@ -71,16 +71,4 @@ public class PartidosController {
             context.redirect("/lista-partidos");
         }
     }
-
-    public static void servirPartido(@NotNull Context context) {
-
-        int idPartido = Integer.parseInt(context.pathParam("id"));
-        Map<String, Object> model = new HashMap<>();
-        Partido partido = PartidosService.obtenerPartido(idPartido);
-        model.put("partido",partido);
-        if (partido.getId() == 0) {
-            model.put("mensajeError", "Partido no encontrado");
-        }
-        context.render("/templates/partidos/partido.ftl", model);
-    }
 }

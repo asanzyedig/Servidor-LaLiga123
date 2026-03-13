@@ -61,7 +61,6 @@ public class Main {
 
         // Partidos
         app.get("/lista-partidos", PartidosController::listarPartidos);
-        app.get("/partido/{id}", PartidosController::servirPartido);
         app.get("/editar-partido/{id}", PartidosController::verEditarPartido);
         app.post("/editar-partido/{id}", PartidosController::editarPartido);
     }
