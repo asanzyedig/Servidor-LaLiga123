@@ -1,6 +1,7 @@
 package edu.masanz.laliga123.dao;
 
 import edu.masanz.laliga123.database.ConnectionManager;
+import edu.masanz.laliga123.model.Partido;
 import edu.masanz.laliga123.model.Team;
 import edu.masanz.laliga123.model.User;
 
@@ -85,5 +86,25 @@ public class ITeamDao {
         Object[] params = {id};
         int resultado = ConnectionManager.ejecutarUpdateSQL(sql, params);
         return resultado > 0;
+    }
+
+    public static List<Team> obtenerEquipos() {
+
+        List<Team> equipos = new ArrayList<>();
+
+        String sql = "SELECT id, name, sede, image FROM teams";
+        Object[] params = {};
+        Object[][] resultado = ConnectionManager.ejecutarSelectSQL(sql, params);
+        if (resultado != null && resultado.length>0) {
+            for(int i = 0; i < resultado.length; i++) {
+                Team equipo = new Team();
+                equipo.setId((Integer) resultado[i][0]);
+                equipo.setName((String) resultado[i][1]);
+                equipo.setSede((String) resultado[i][2]);
+                equipo.setImage((String) resultado[i][3]);
+                equipos.add(equipo);
+            }
+        }
+        return equipos;
     }
 }

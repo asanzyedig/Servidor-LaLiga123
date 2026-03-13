@@ -6,9 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-
-                <h1>EDITAR PARTIDO</h1>
-
+       <h1>EDITAR PARTIDO</h1>
 
     <a href="/lista-partidos">Regresar al listado</a>
 
@@ -28,14 +26,14 @@
             </div>
             <div class="w25">
                 <label for="jornada">Jornada</label>
-                <input type="text" name="jornada" value="${partido.jornada}" disabled="disabled">
+                <input type="text" name="jornada" value="${partido.jornada}" readonly>
             </div>
             <div class="w25">
-                <label for="equipo1">Equipo1</label>
-                <input type="text" name="equipo1" value="${partido.idEquipo1}" disabled="disabled">
+                <label for="idEquipo1">Equipo1</label>
+                <input type="text" name="idEquipo1" value="${partido.idEquipo1}" readonly>
             </div><div class="w25">
-                <label for="equipo2">Equipo2</label>
-                <input type="text" name="equipo2" value="${partido.idEquipo2}" disabled="disabled">
+                <label for="idEquipo2">Equipo2</label>
+                <input type="text" name="idEquipo2" value="${partido.idEquipo2}" readonly>
             </div>
         </div>
 
