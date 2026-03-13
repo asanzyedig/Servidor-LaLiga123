@@ -31,7 +31,7 @@ public class UsersController {
         if (autenticar) {
             context.redirect("/inicio");
         } else {
-            context.render("/login");
+            context.redirect("/login");
         }
     }
 
