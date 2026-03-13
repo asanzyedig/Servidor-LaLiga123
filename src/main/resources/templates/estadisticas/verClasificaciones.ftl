@@ -23,7 +23,7 @@
                 <select name="jornada" id="Jornada" onchange="this.form.submit()">
                     <option value="">Selecciona jornada</option>
                     <#list jornadas as jornada>
-                        <option value="${jornada}" <#if jornadaSeleccionada == jornada>selected</#if>>Jornada ${jornada}</option>
+                        <option value="${jornada}" <#if jornadaSeleccionada?? && jornadaSeleccionada == jornada>selected</#if>>Jornada ${jornada}</option>
                     </#list>
                 </select>
             </form>
